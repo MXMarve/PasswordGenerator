@@ -17,6 +17,12 @@ def main():
     except ImportError:
         raise RuntimeError("String is not installed! Installing Now... ")
         os.system("pip install string")
+    try:
+        from alive_progress import alive_bar
+        print("Alive Bar is installed!")
+    except ImportError:
+        raise RuntimeError("Alive Bar is not installed! Installing Now...")
+        os.system("pip install alive_progress")
 def compute():
     for i in range(1):
         ...
