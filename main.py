@@ -7,11 +7,17 @@ print("Loading... ")
 def checker():
   print("Checking Requirements...")
   try:
-    os.system("python setup.py")
-    print("Requirements Met! ")
+    os.system("setup.bat")
+    os.system("reqcheck.py")  
   except:
-    print("Unknown Error Occured")
+    print("Not Windows. Trying Linux")
+    try:
+      os.system("setup.sh")
+      os.system("reqcheck.py") 
+    except:
+      print("Unable to install requirements! Unknown Error Occured ")
 checker()
+print("-----------------------------------------------------------------------------------------------------------------")
 length = int(input("Enter the length of the password you want (Recommended: 16): "))
 a1 = input("Do you want numbers in your password? Y/N: ")
 a2 = input("Do you want symbols in your password? Y/N: ")
